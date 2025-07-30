@@ -1,0 +1,396 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 4%);
+  --muted: hsl(210, 10%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 4%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 4%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(51, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 4%);
+  --secondary: hsl(210, 10%, 96%);
+  --secondary-foreground: hsl(215, 25%, 27%);
+  --accent: hsl(210, 10%, 96%);
+  --accent-foreground: hsl(215, 25%, 27%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(215, 20%, 65%);
+  --radius: 0.5rem;
+
+  /* CareerCrafter Custom Colors */
+  --deep-black: hsl(0, 0%, 4%);
+  --card-dark: hsl(0, 0%, 10%);
+  --gold-primary: hsl(51, 100%, 50%);
+  --gold-secondary: hsl(39, 100%, 50%);
+  --light-yellow: hsl(60, 100%, 90%);
+  --glass-dark: hsla(0, 0%, 8%, 0.8);
+  --gold-primary-rgb: 212, 175, 55;
+}
+
+.dark {
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(0, 0%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 10%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 28%, 17%);
+  --input: hsl(215, 28%, 17%);
+  --primary: hsl(51, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 4%);
+  --secondary: hsl(215, 28%, 17%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 28%, 17%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(215, 20%, 65%);
+
+  /* Dark mode CareerCrafter colors */
+  --deep-black: hsl(0, 0%, 4%);
+  --card-dark: hsl(0, 0%, 10%);
+  --gold-primary: hsl(51, 100%, 50%);
+  --gold-secondary: hsl(39, 100%, 50%);
+  --light-yellow: hsl(60, 100%, 90%);
+  --glass-dark: hsla(0, 0%, 8%, 0.8);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-deep-black text-foreground;
+    background-color: var(--deep-black);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .bg-deep-black {
+    background-color: var(--deep-black);
+  }
+  
+  .bg-card-dark {
+    background-color: var(--card-dark);
+  }
+  
+  .bg-gold-primary {
+    background-color: var(--gold-primary);
+  }
+  
+  .bg-gold-secondary {
+    background-color: var(--gold-secondary);
+  }
+  
+  .bg-light-yellow {
+    background-color: var(--light-yellow);
+  }
+  
+  .bg-glass-dark {
+    background-color: var(--glass-dark);
+  }
+  
+  .text-gold-primary {
+    color: var(--gold-primary);
+  }
+  
+  .text-gold-secondary {
+    color: var(--gold-secondary);
+  }
+  
+  .text-light-yellow {
+    color: var(--light-yellow);
+  }
+  
+  .text-deep-black {
+    color: var(--deep-black);
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white transition-all duration-200;
+    background-color: transparent;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(var(--gold-primary-rgb), 0.1);
+  }
+  
+  .nav-link-active {
+    color: var(--gold-primary);
+    background-color: rgba(var(--gold-primary-rgb), 0.2);
+  }
+  
+  .mobile-nav-link {
+    @apply flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 w-full;
+    background-color: transparent;
+  }
+  
+  .mobile-nav-link:hover {
+    background-color: rgba(var(--gold-primary-rgb), 0.1);
+  }
+  
+  .mobile-nav-link-active {
+    color: var(--gold-primary);
+    background-color: rgba(var(--gold-primary-rgb), 0.2);
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    @apply inline-block px-2 py-1 text-xs rounded-full border;
+  }
+  
+  .border-gold-primary {
+    border-color: var(--gold-primary);
+  }
+  
+  .border-gold-secondary {
+    border-color: var(--gold-secondary);
+  }
+  
+  .border-light-yellow {
+    border-color: var(--light-yellow);
+  }
+  
+  .ring-gold-primary {
+    --tw-ring-color: var(--gold-primary);
+  }
+  
+  .ring-gold-secondary {
+    --tw-ring-color: var(--gold-secondary);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
+  }
+
+  .glass-morphism {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .card-3d {
+    transform: perspective(1000px) rotateX(5deg);
+    transition: all 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+  }
+
+  .skill-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate 20s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes glow {
+  from { 
+    box-shadow: 0 0 20px var(--gold-primary); 
+  }
+  to { 
+    box-shadow: 0 0 30px var(--gold-secondary), 0 0 40px var(--gold-primary); 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    left: -100%; 
+  }
+  100% { 
+    left: 100%; 
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-secondary);
+}
+
+/* Form styling */
+.form-input {
+  @apply w-full bg-deep-black border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-primary focus:outline-none transition-colors text-white;
+}
+
+.form-input:focus {
+  @apply ring-2 ring-gold-primary;
+  --tw-ring-opacity: 0.5;
+}
+
+.form-textarea {
+  @apply w-full bg-deep-black border border-gray-600 rounded-lg px-4 py-3 focus:border-gold-primary focus:outline-none transition-colors resize-none text-white;
+}
+
+.form-textarea:focus {
+  @apply ring-2 ring-gold-primary;
+  --tw-ring-opacity: 0.5;
+}
+
+.form-select {
+  @apply bg-deep-black border border-gray-600 rounded-lg px-3 py-2 focus:border-gold-primary focus:outline-none transition-colors text-white;
+}
+
+.form-select:focus {
+  @apply ring-2 ring-gold-primary;
+  --tw-ring-opacity: 0.5;
+}
+
+/* Button variants */
+.btn-primary {
+  @apply gold-gradient text-deep-black font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 animate-glow;
+}
+
+.btn-secondary {
+  @apply border text-gold-primary px-6 py-3 rounded-xl transition-colors;
+  border-color: rgba(var(--gold-primary-rgb), 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(var(--gold-primary-rgb), 0.1);
+}
+
+.btn-ghost {
+  @apply text-gray-300 hover:text-gold-primary transition-colors;
+}
+
+/* Card variants */
+.card-glass {
+  @apply glass-morphism bg-card-dark border rounded-xl;
+  border-color: rgba(var(--gold-primary-rgb), 0.2);
+}
+
+.card-3d-interactive {
+  @apply card-3d card-glass group;
+}
+
+/* Status badges */
+.badge-free {
+  @apply text-light-yellow px-3 py-1 rounded-full text-sm font-medium;
+  background-color: rgba(247, 233, 74, 0.1);
+}
+
+.badge-missing {
+  @apply bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs;
+}
+
+.badge-improve {
+  @apply bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs;
+}
+
+.badge-match {
+  @apply bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs;
+}
+
+/* Skill tags */
+.skill-tag {
+  @apply text-gold-primary px-3 py-1 rounded-full text-sm;
+  background-color: rgba(var(--gold-primary-rgb), 0.2);
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-700 rounded;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .card-3d {
+    transform: none;
+  }
+  
+  .card-3d:hover {
+    transform: translateY(-5px);
+  }
+}
