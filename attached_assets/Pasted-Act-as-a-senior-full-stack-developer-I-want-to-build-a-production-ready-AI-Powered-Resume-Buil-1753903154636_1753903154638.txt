@@ -1,0 +1,89 @@
+Act as a senior full-stack developer.
+
+I want to build a production-ready **AI-Powered Resume Builder** web application using the following tech stack and services:
+
+---
+
+🧱 **Stack & Architecture**:
+
+- 🔙 **Backend**: Java with Spring Boot (REST API)
+- 🌐 **Frontend**: Next.js + Tailwind CSS
+- 🧠 **AI**: Use Groq API (compatible with OpenAI prompts)
+- 🔐 **Authentication**: Clerk (OAuth + session management)
+- 🗃️ **Database**: Neon (PostgreSQL serverless)
+- ☁️ **Storage**: Cloudinary (for resume PDFs and user images)
+- 🚀 **Deployment**: 
+  - Backend: Render
+  - Frontend: Vercel
+
+---
+
+🎯 **Goal of the App**:
+
+Build a fully functional Resume Builder platform where users can:
+
+1. Sign up & log in via Clerk
+2. Fill basic profile details (education, experience, skills)
+3. Generate resume sections using Groq AI:
+   - Summary
+   - Work experience bullet points
+   - Skill gap analysis from job description
+   - Full resume from structured user data
+4. Generate and export PDF resumes to Cloudinary
+5. View/edit/save multiple resume versions (version control)
+6. Download resumes or share via public link
+7. Use role-based UI (Free, Pro — optional)
+8. Deploy with proper environment setup on Vercel & Render
+
+---
+
+🗂 **Requirements**:
+
+Provide me a complete development plan including:
+
+1. 🔧 **Project folder structure** for both backend (Spring Boot) and frontend (Next.js)
+2. 📦 **Tech stack setup guide** — how to integrate Clerk, Cloudinary, Neon, and Groq API
+3. 🔐 **Authentication flow** with Clerk (including JWT verification in Spring Boot)
+4. 📄 **Sample API endpoints** in Java Spring Boot:
+   - POST /resume/generate (with prompt to Groq)
+   - POST /resume/upload (PDF to Cloudinary)
+   - POST /resume/compare-job (for skill gap)
+   - GET /resume/:id
+   - GET /resume/all (with pagination)
+   - POST /resume/export-pdf
+5. 🧠 **AI prompt formatting** in backend (Groq API integration with Java)
+6. 🖼️ **Uploading resume PDF/image to Cloudinary** (Java + Cloudinary SDK)
+7. 🧑‍🎨 **Frontend pages**:
+   - Login/register with Clerk
+   - Profile form
+   - Job description input
+   - Resume editor
+   - Resume preview & PDF download
+   - Dashboard (list all versions)
+8. 💾 **Database schema** in PostgreSQL (Neon):
+   - User
+   - Resume
+   - ResumeVersion
+   - JobDescription
+9. 📄 **Sample `.env` files** for both frontend & backend
+10. 🚀 **Deployment steps**:
+   - Spring Boot to Render (with build & health checks)
+   - Next.js to Vercel (with Clerk environment keys)
+11. ✅ **Testing tools** and Postman collection (optional)
+12. 📖 A proper **README.md** file like GitHub projects
+
+---
+
+⚠️ Please ensure:
+- The backend is stateless, RESTful, and uses DTOs.
+- Groq AI is called from the backend only, with prompt templates.
+- PDF generation uses iText or PDFBox in Java.
+- Use PostgreSQL via Neon with JDBC or Spring Data JPA.
+- Follow clean architecture (controller, service, repository).
+- Cloudinary URL is saved in the DB after upload.
+- CORS configured between frontend (Vercel) and backend (Render).
+
+---
+
+🔁 Return output in a structured format (like code + explanation) and make the project replit-friendly (can be cloned & tested on Replit). Avoid unnecessary explanation and focus on production-ready, modular, and clean code with comments.
+
